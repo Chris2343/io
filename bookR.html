@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Now Record</title>
+    <style>
+        /* Style for the table */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            
+        }
+
+        h1 {
+            text-align: center;
+            color: #173141;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+           
+
+           
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        /* Style for the list */
+        ul {
+            list-style: none;
+            padding: 0;
+          
+        }
+
+        li {
+            margin: 5px 0;
+            padding: 10px;
+            background-color: #f2f2f2;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Book Now Records</h1>
+        <!-- Use a table for displaying submitted data -->
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone </th>
+                <th>Service Type</th>
+                <th>Preferred Time of Day</th>
+            </tr>
+            <tr>
+                <td id="name"></td>
+                <td id="email"></td>
+                <td id="phone"></td>
+                <td id="serviceType"></td>
+                <td id="timeOfDay"></td>
+            </tr>
+        </table>
+
+        <!-- Use an unordered list to display submitted data -->
+        
+        <ul id="submittedData"></ul>
+    </div>
+
+    <script>
+        // Retrieve the submitted data from localStorage
+        const formData = JSON.parse(localStorage.getItem("formData"));
+        const nameElement = document.getElementById("name");
+        const emailElement = document.getElementById("email");
+        const phoneElement = document.getElementById("phone");
+        const serviceTypeElement = document.getElementById("serviceType"); // New line
+        const timeOfDayElement = document.getElementById("timeOfDay");
+        const submittedDataList = document.getElementById("submittedData");
+
+        if (formData) {
+            // Fill in the table and list with the submitted data
+            nameElement.textContent = formData.name;
+            emailElement.textContent = formData.email;
+            phoneElement.textContent = formData.phone;
+            serviceTypeElement.textContent = formData.serviceType; // New line
+            timeOfDayElement.textContent = formData.timeOfDay;
+
+            // Create a new list item to display the submitted data
+            const listItem = document.createElement("li");
+            listItem.textContent = `Name: ${formData.name}, Email: ${formData.email}, Phone: ${formData.phone}, Service Type: ${formData.serviceType}, Preferred Time of Day: ${formData.timeOfDay}`;
+
+            // Append the list item to the submittedDataList
+            submittedDataList.appendChild(listItem);
+        } else {
+            // Handle the case when there's no submitted data
+            submittedDataList.innerHTML = "<li>No data has been submitted yet.</li>";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+/* style6.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #c9c9c9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    
+    background-image: url(logo3.png);
+    background-size: contain; /* Adjusted to 'contain' */
+    background-position: center;
+    background-color: #173141;
+  }
+  
+  .container {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    text-align: center;
+  }
+  
+  h2 {
+    color: #e8e4e4;
+    margin-bottom: 20px;
+  }
+  
+  form {
+    text-align: left;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #555;
+  }
+  
+  /* Navbar styles */
+  .navbar {
+    background-color: #333;
+    overflow: hidden;
+  }
+  
+  .navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .navbar a:hover {
+    background-color: #555;
+  }
+  
+  /* Footer styles */
+ 
+  #loginForm label {
+    color: white;
+}
+  /* Square container for login form */
+  .square-container {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    width: 300px;
+    margin: 0 auto; /* Center the container horizontally */
+  }
+  
+  #loginForm {
+    text-align: center;
+    background-color: rgba(171, 168, 168, 0.5); /* Add a background color with some transparency */
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0px 0px 10px rgba(243, 242, 242, 0.2);
+    max-width:300px; /* Adjust the maximum width as needed */
+    margin: 0 auto;
+    font-size: 50px;
+}
+
+#loginForm h2 {
+    color: rgb(240, 238, 238);
+}
+
+#loginForm input[type="text"],
+#loginForm input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8); /* Add a background color with some transparency */
+    color: #000000; /* Set the text color to black for better visibility */
+}
+
+#loginForm input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#loginForm input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+#loginForm h2 {
+    font-size: 40px;
+  }
+
+  #loginForm button {
+    font-size: 40px;
+  }

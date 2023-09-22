@@ -1,0 +1,59 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #173141;
+    color: white;
+    text-align: center; /* Center-align the text within the nav bar */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 30px; /* Set the font size to 30px */
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+   
+    
+
+
+
+    
+    background-color:#fff; /* Add a background color with some transparency */
+    padding: 70px;
+    border-radius: 30px;
+    box-shadow: 0px 0px 10px rgba(60, 16, 16, 0.2);
+    max-width: 500px; /* Adjust the maximum width as needed */
+    margin: 0 auto;
+
+
+
+}
+
+/* Style for the Admin and Sales buttons */
+#admin-btn, #sales-btn {
+    background-color: #3a3c3f;
+    color: #fff;
+    padding: 10px 10px;
+    border: 2px solid #1b2d41;
+    cursor: pointer;
+    margin: 10px; /* Add some margin between buttons */
+    font-size: 20px;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="logo3.png" type="image/png">
+
+    <link rel="manifest" href="logo3.png">
+    <title>login -909 Clean Up</title>
+    <meta name="description" content=" AboutUs">
+<meta property="og:site_name" content="(909)Clean-Up">
+<meta property="og:type" content="product">
+<meta property="og:description" content=" login">
+
+<meta property="og:image:width" content="3000">
+    <link rel="stylesheet" href="style6.css"/>
+</head>
+<body>
+  
+  <form id="loginForm">
+    <h2>Log In</h2>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required><br><br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br><br>
+    <input type="submit" value="Login">
+  </form>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent form submission
+
+      // Perform login validation
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+
+      // Retrieve stored credentials
+      var storedUsername = localStorage.getItem("username");
+      var storedPassword = localStorage.getItem("password");
+
+      // Replace the condition below with your own login validation logic
+      if (username === "sales" && password === "password") {
+        // Prompt user to choose new credentials
+        var newUsername = prompt("Please choose a new username:");
+        var newPassword = prompt("Please choose a new password:");
+
+        // Update credentials
+        username = newUsername;
+        password = newPassword;
+
+        // Save new credentials
+        localStorage.setItem("username", username);
+        localStorage.setItem("password", password);
+
+        // Prompt user to re-login with new credentials
+        var reLoginUsername = prompt("Please enter your new username:");
+        var reLoginPassword = prompt("Please enter your new password:");
+
+        // Validate re-login credentials
+        if (reLoginUsername === username && reLoginPassword === password) {
+          window.location.href = "sales.html"; // Redirect to another page
+        } else {
+          alert("Invalid login credentials. Please try again.");
+        }
+      } else if (username === storedUsername && password === storedPassword) {
+        window.location.href = ".html"; // Redirect to another page
+      } else {
+        alert("Invalid login credentials. Please try again.");
+      }
+    });
+  </script>
+</body>
+</body>
+</html>

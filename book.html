@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Now</title>
+
+    <link rel="shortcut icon" href="logo3.png" type="image/png">
+
+    <link rel="manifest" href="logo3.png">
+    <title>Book -909 Clean Up</title>
+    <meta name="description" content=" AboutUs">
+<meta property="og:site_name" content="(909)Clean-Up">
+<meta property="og:type" content="product">
+<meta property="og:description" content=" Book">
+
+<meta property="og:image:width" content="3000">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #173141;
+        
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    
+   
+
+   
+
+        }
+        
+            .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    color: #fff;
+   
+   
+}
+        .form-group {
+            margin-bottom: 20px;
+            
+        }
+        label {
+            display: block;
+            margin-bottom: 22px;
+            color: #fff;
+        }
+        input[type="text"], input[type="email"], input[type="tel"], select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button[type="submit"] {
+            background-color: #1378e5;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .navbar {
+            background-color: #383939; /* Set your navbar background color */
+            padding: 10px;
+            color: #fff; /* Text color */
+        }
+
+        /* Footer styles */
+        .footer {
+            
+            background-color: #5c5d5f; /* Set your footer background color */
+            padding: 10px;
+            color: #fff; /* Text color */
+            text-align: center;
+            position: fixed; /* Fixed position to cover the entire bottom */
+            bottom: 0; /* Stick to the bottom of the viewport */
+            width: 100%; /* Full width */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <!-- Company name in the left corner of the navbar -->
+        <span class="bold-text">(909)Clean UP</span>
+    </div>
+    <div class="container">
+        <h1>Book Now</h1>
+        <form id="bookNowForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="serviceType">Service Type:</label>
+                <select id="serviceType" name="serviceType" required>
+                    <option value="windowCleaning">Window Cleaning</option>
+                    <option value="solarPanel">Solar Panel</option>
+                    <option value="gutterCleaning">Gutter Cleaning</option>
+                    <option value="pressureWashing">Pressure Washing</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="timeOfDay">Preferred Time of Day:</label>
+                <select id="timeOfDay" name="timeOfDay">
+                    <option value="morning">Morning</option>
+                    <option value="afternoon">Afternoon</option>
+                    <option value="evening">Evening</option>
+                </select>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="thankYouMessage" style="display: none;">
+            <p>Thank you! A team member will message you within 24 hours.</p>
+            <button id="homeButton">Home</button>
+        </div>
+    </div>
+    <div class="footer">
+        <!-- Footer content, e.g., copyright information -->
+        &copy; 2023 (909) Clean Up. All rights reserved.
+    </div>
+
+    <script>
+        const form = document.getElementById("bookNowForm");
+        const thankYouMessage = document.getElementById("thankYouMessage");
+        const homeButton = document.getElementById("homeButton");
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // Get form values
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const phone = document.getElementById("phone").value;
+            const serviceType = document.getElementById("serviceType").value;
+            const timeOfDay = document.getElementById("timeOfDay").value;
+
+            // Create an object to store the submitted data
+            const formData = {
+                name,
+                email,
+                phone,
+                serviceType,
+                timeOfDay
+            };
+
+            // Store the data in localStorage for later retrieval on the "submitted.html" page
+            localStorage.setItem("formData", JSON.stringify(formData));
+
+            // Hide the form and display the "Thank you" message
+            form.style.display = "none";
+            thankYouMessage.style.display = "block";
+        });
+
+        // Add an event listener to the home button for redirection
+        homeButton.addEventListener("click", function() {
+            window.location.href = "index.html"; // Replace "home.html" with the actual URL of your home page
+        });
+    </script>
+</body>
+</html>
